@@ -59,6 +59,20 @@ function countVowels(str) {
   return count;
 }
 
+// ============ PART 3: OBJECT ============
+const student = {
+  name: "Your Name",
+  age: 20,
+  grades: [85, 92, 78, 90, 88],
+
+  getAverage: function() {
+    return average(this.grades);
+  },
+
+  isHonorRoll: function() {
+    return this.getAverage() > 85;
+  }
+};
 
 // ============ TEST YOUR CODE ============
 console.log("=== Part 1: Arrays ===");
@@ -72,3 +86,9 @@ console.log("\n=== Part 2: Strings ===");
 console.log("capitalize('hello'):", capitalize("hello")); // Hello
 console.log("reverse('hello'):", reverse("hello"));       // olleh
 console.log("countVowels('hello'):", countVowels("hello")); // 2
+
+console.log("\n=== Part 3: Object ===");
+console.log("Student:", student.name);
+console.log("Grades:", student.grades);
+console.log("Average:", student.getAverage());   // 86.6
+console.log("Honor Roll:", student.isHonorRoll()); // true
