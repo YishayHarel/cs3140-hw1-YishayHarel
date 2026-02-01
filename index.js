@@ -37,9 +37,38 @@ function max(arr) {
   return largest;
 }
 
+// ============ PART 2: STRING FUNCTIONS ============
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function reverse(str) {
+  return str.split("").reverse().join("");
+}
+
+function countVowels(str) {
+  let count = 0;
+  const vowels = "aeiou";
+  const lower = str.toLowerCase();
+
+  for (let i = 0; i < lower.length; i++) {
+    if (vowels.includes(lower[i])) {
+      count++;
+    }
+  }
+  return count;
+}
+
+
+// ============ TEST YOUR CODE ============
 console.log("=== Part 1: Arrays ===");
 console.log("Numbers:", numbers);
 console.log("Sum:", sum(numbers));       // 77
 console.log("Average:", average(numbers)); // 7.7
 console.log("Min:", min(numbers));       // 2
 console.log("Max:", max(numbers));       // 15
+
+console.log("\n=== Part 2: Strings ===");
+console.log("capitalize('hello'):", capitalize("hello")); // Hello
+console.log("reverse('hello'):", reverse("hello"));       // olleh
+console.log("countVowels('hello'):", countVowels("hello")); // 2
